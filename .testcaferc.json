@@ -1,0 +1,16 @@
+{
+  "baseUrl": "http://localhost:5173",
+  "browsers": [
+    "chrome"
+  ],
+  "src": [
+    "./tests/**/*.ts"
+  ],
+  "screenshots": {
+    "takeOnFails": true,
+    "path": "screenshots/"
+  },
+  "quarantineMode": true,
+  "skipJsErrors": true,
+  "concurrency": 1
+}
