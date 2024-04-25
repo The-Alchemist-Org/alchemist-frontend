@@ -25,16 +25,6 @@ When adding new env variables, refer to: https://vitejs.dev/guide/env-and-mode.h
 - `zod` for validation (Please research it more, as it is very powerful library)
 - `storybook` for creating components in isolation
 
-Libraries that are approved by the tech forum, but not used in this boilerplate:
-- `tailwind`
-- `react-query`
-- `radix-ui`
-- `cypress`
-- `react-hook-form`
-
-These libraries can be used in a project if there is a specific need for them. Multiple libraries with the same purpose should **NOT** be mixed. 
-If you wish to use this library in the project OR you have a need for a very specific library not listed above, please contact tech forum first and state your case before doing so.
-
 
 ### General guidelines
 - Follow atomic design principles as much as possible (https://atomicdesign.bradfrost.com/chapter-2/).
