@@ -29,9 +29,10 @@ export const FormContainer: FC<Props> = ({ children }) => (
       </div>
       <div className="hidden lg:flex flex-grow justify-end">
         <img
-          src="https://thatsup.website/storage/265/18680/responsive-images/FUJI4919___media_library_original_4000_2667.jpg"
-          alt="some ship"
+          src="/public/background.jpg"
+          alt="Some bar in the middle of nowhere."
           className="rounded-md object-cover max-h-[100vh]"
+          loading="lazy"
         />
       </div>
     </div>
