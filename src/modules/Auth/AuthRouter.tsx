@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 
 const Login = lazy(() => import('./Login'));
+const Signup = lazy(() => import('./Signup'));
 
 export const AuthRouter = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export const AuthRouter = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<div />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="*" element={<Navigate to="/auth/login" />} />
     </Routes>
   );
