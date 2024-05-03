@@ -1,6 +1,9 @@
 :root {
   /* Primary Colors */
+/*<<<<<<< Updated upstream
   --primary-default: #F49A9A;
+=======*/
+--primary-default: #F49A9A;
   --primary-default-rgb: 244, 154, 154;
   --primary-50: #FFF5F5;
   --primary-100: #FFDFDF;
