@@ -1,25 +1,9 @@
 import { useToastNotification } from 'hooks';
 import { Button } from '../../components/Button';
+import { postQueue } from '../../api/Demo/demo';
 
 // This const is only for testing to communicate with the back-end api
-const hardCodedJson = {
-  recipeID: 7,
-  machineID: null,
-};
-
-async function addToQueue(data: any) {
-  const response = await fetch('http://localhost:3000/queue/add', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  if (response.ok) {
-    return true;
-  }
-  return 'error';
-}
+const hardCodedJson = { recipeID: 7, machineID: 123 };
 
 export const DemoPage = () => {
   const { info } = useToastNotification();
@@ -30,15 +14,13 @@ export const DemoPage = () => {
         <Button
           type="button"
           className="w-4/5 my-6"
-          onClick={() => {
-            addToQueue(hardCodedJson)
-              .then((value) => {
-                if (value === true) {
-                  info('Your order has been placed in the queue');
-                } else {
-                  error('Failed to place order');
-                }
-              });
+          onClick={async () => {
+            const response = await postQueue(hardCodedJson);
+            if (response.status === 200) {
+              info('Your order has been placed');
+            } else {
+              error('Failed placing order');
+            }
           }}
         >
           Place Order
