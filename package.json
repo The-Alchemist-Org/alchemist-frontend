@@ -22,10 +22,6 @@
       "npx eslint --fix"
     ]
   },
-  "engines": {
-    "node": "^21",
-    "npm": ">=8"
-  },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@mertasan/tailwindcss-variables": "^2.7.0",
