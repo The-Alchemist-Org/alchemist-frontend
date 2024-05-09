@@ -7,3 +7,4 @@ export * from './SearchSelect';
 export * from './Loading';
 export * from './Checkbox';
 export * from './Tag';
+export * from './Layouts';
