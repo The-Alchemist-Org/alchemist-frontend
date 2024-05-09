@@ -27,12 +27,12 @@ export const menuItems: MenuItem[] = [
       {
         name: 'User',
         icon: <PersonOutlined fontSize="small" className="ml-2" />,
-        route: '/user',
+        route: '/settings/user',
       },
       {
         name: 'Mixer',
         icon: <BlenderOutlined fontSize="small" className="ml-2" />,
-        route: '/mixer',
+        route: '/settings/drink-config',
       },
     ],
   },

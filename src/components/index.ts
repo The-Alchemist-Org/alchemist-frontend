@@ -8,3 +8,4 @@ export * from './Loading';
 export * from './Checkbox';
 export * from './Tag';
 export * from './Layouts';
+export * from './IngredientsPicker';
