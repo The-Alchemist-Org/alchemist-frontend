@@ -9,7 +9,7 @@ export const FormContainer: FC<Props> = ({ children }) => (
     <div className="flex justify-between">
       <div className="flex flex-col w-full lg:max-w-[50%] justify-between items-center pr-6">
         <img
-          src="/vite.svg"
+          src="/logo.svg"
           alt="logo"
           className="max-h-[15vh] self-start max-w-[250px]"
         />
