@@ -12,7 +12,7 @@ import { SignupFormType, SignupValidation } from './signupForm.validation';
 export const useSignupForm = () => {
   const navigate = useNavigate();
   const { setToken } = useAuthContext();
-  const { error } = useToastNotification();
+  const { error, success } = useToastNotification();
 
   const methods = useForm<SignupFormType>({
     mode: 'onSubmit',
@@ -28,6 +28,7 @@ export const useSignupForm = () => {
     {
       onSuccess: (data: AuthDTO) => {
         setToken(data.token || '');
+        success('Account created successfully');
         navigate('/home');
       },
       onError: (e: AxiosError) => {
