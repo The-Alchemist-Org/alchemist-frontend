@@ -11,6 +11,8 @@ export const DemoPage = () => {
   return (
     <div>
       <div className="flex flex-col items-center w-full">
+        This is just here for testing purposes. Click the button to place an order for recipe with
+        ID 7 on machine with ID 123.
         <Button
           type="button"
           className="w-4/5 my-6"
