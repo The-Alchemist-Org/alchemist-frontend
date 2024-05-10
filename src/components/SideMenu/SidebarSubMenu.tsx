@@ -35,7 +35,7 @@ export const SidebarSubMenu = (
         className="origin-top-right absolute -mt-14 ml-8 w-44 rounded-md shadow-lg bg-white focus:outline-none p-0"
       >
         {subMenuItems?.map((subMenuItem) => (
-          <Link to={subMenuItem?.route ?? ''} onClick={() => setOpenSubMenu(false)}>
+          <Link to={subMenuItem?.route ?? ''} onClick={() => setOpenSubMenu(false)} key={subMenuItem.route}>
             <DropdownMenuItem
               className={cn(
                 'cursor-pointer block px-2 py-2 text-sm text-text-primary w-full text-left',
