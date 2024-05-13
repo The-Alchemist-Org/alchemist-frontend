@@ -3,7 +3,7 @@ import { Button } from '../../components/Button';
 import { postQueue } from '../../api/Demo/demo';
 
 // This const is only for testing to communicate with the back-end api
-const hardCodedJson = { recipeID: 7, machineID: 123 };
+const hardCodedJson = { recipeId: 7, machineId: 3 };
 
 export const DemoPage = () => {
   const { info } = useToastNotification();
@@ -12,7 +12,7 @@ export const DemoPage = () => {
     <div>
       <div className="flex flex-col items-center w-full">
         This is just here for testing purposes. Click the button to place an order for recipe with
-        ID 7 on machine with ID 123.
+        ID 7 on machine with ID 3.
         <Button
           type="button"
           className="w-4/5 my-6"
