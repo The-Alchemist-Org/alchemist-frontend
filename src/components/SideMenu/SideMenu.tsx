@@ -30,7 +30,7 @@ export const SideMenu = () => {
         if (item?.subMenuItems) {
           linkEl = (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Tooltip workaround
-            <span tabIndex={0}>
+            <span tabIndex={0} key={item.route}>
               <SidebarSubMenu menu={item} isMenuOpen={isMenuOpen} isActive={routeMatch} />
             </span>
           );
@@ -41,6 +41,7 @@ export const SideMenu = () => {
                 'bg-primary text-white': routeMatch,
               })}
               to={item?.route ?? ''}
+              key={item.route}
             >
               {item.icon}
               <span className={cn('ml-2 group-hover:text-text-primary', {
@@ -53,7 +54,7 @@ export const SideMenu = () => {
           );
         }
 
-        return <div>{linkEl}</div>;
+        return <div key={item.route}>{linkEl}</div>;
       })}
 
       <button
