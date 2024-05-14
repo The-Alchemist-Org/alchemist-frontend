@@ -3,6 +3,7 @@ import {
   Home,
   Settings,
   BlenderOutlined,
+  ReceiptLong,
 } from '@mui/icons-material';
 
 export interface MenuItem {
@@ -18,6 +19,11 @@ export const menuItems: MenuItem[] = [
     name: 'Home',
     route: '/',
     icon: <Home className="w-6 h-6" />,
+  },
+  {
+    name: 'Recipes',
+    route: '/recipes',
+    icon: <ReceiptLong className="w-6 h-6" />,
   },
   {
     name: 'Settings',

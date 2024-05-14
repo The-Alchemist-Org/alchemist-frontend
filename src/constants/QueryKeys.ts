@@ -3,4 +3,5 @@ export const queryKeys = {
   LOGIN: 'login',
   MIXER: 'mixer',
   INGREDIENTS: 'ingredients',
+  RECIPES: 'recipes',
 };
