@@ -16,13 +16,15 @@ export default () => {
 
   const DrinkConfigRouter = lazy(() => import('./DrinkConfigSettings'));
   const UserSettingsRouter = lazy(() => import('./UserSettings'));
-  const DemoPage = lazy(() => import('./DemoPage'));
+  const SearchRouter = lazy(() => import('./Search'));
+  const RecipesRouter = lazy(() => import('./Recipes'));
 
   return (
     <IngredientsContextProvider>
       <Routes>
         <Route path="*" element={<DashboardLayout />}>
-          <Route path="home/*" element={<Suspense><DemoPage /></Suspense>} />
+          <Route path="home/*" element={<Suspense><SearchRouter /></Suspense>} />
+          <Route path="recipes/*" element={<Suspense><RecipesRouter /></Suspense>} />
           <Route path="settings/drink-config/*" element={<Suspense><DrinkConfigRouter /></Suspense>} />
           <Route path="settings/user/*" element={<Suspense><UserSettingsRouter /></Suspense>} />
           <Route path="*" element={<Navigate to="/home" replace />} />
