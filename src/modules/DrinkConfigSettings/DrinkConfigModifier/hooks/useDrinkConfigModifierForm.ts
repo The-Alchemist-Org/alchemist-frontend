@@ -38,11 +38,11 @@ export const useDrinkConfigModifierForm = () => {
   const { isLoading, mutate } = useMutation(
     async (data: DrinkConfigBody) => {
       await putDrinkConfig(data);
-      queryClient.invalidateQueries([queryKeys.MIXER]);
     },
     {
       onSuccess: () => {
         success('Successfully updated mixer configuration');
+        queryClient.invalidateQueries([queryKeys.MIXER]);
       },
       onError: () => {
         error('Failed to update mixer configuration');
