@@ -1,14 +1,16 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { DrinkConfigBody, putDrinkConfig } from 'api/DrinkConfig';
 import { useToastNotification } from 'hooks';
 import { useDrinkConfigDetail } from 'hooks/useDrinkConfigDetail';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect, useMemo } from 'react';
+import { queryKeys } from 'constants/QueryKeys';
 import { DrinkConfigModifierForm, DrinkConfigModifierFormType } from './drinkConfigModifierForm.validation';
 
 export const useDrinkConfigModifierForm = () => {
   const { success, error } = useToastNotification();
+  const queryClient = useQueryClient();
 
   const { data: drinkConfig, isLoading: isLoadingData } = useDrinkConfigDetail();
 
@@ -36,6 +38,7 @@ export const useDrinkConfigModifierForm = () => {
   const { isLoading, mutate } = useMutation(
     async (data: DrinkConfigBody) => {
       await putDrinkConfig(data);
+      queryClient.invalidateQueries([queryKeys.MIXER]);
     },
     {
       onSuccess: () => {
