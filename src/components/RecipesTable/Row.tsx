@@ -6,6 +6,7 @@ import { AlertDialogRoot, AlertDialogTrigger } from 'components/Alert';
 import { TD, TRow } from '../Table';
 import { IconButton } from '../Button';
 import { AlertOrder } from './AlertOrder';
+import { AlertDelete } from './AlertDelete';
 
 type Props = {
   recipe: RecipeDTO;
@@ -27,7 +28,7 @@ export const Row: FC<Props> = ({
         )}
       </TD>
       {canUpdate && (
-        <TD className="flex flex-row gap-2">
+        <TD className="flex flex-row gap-2 justify-end">
           <IconButton
             variant="ghost"
             className="hidden h-8 w-8 p-0 lg:flex"
@@ -35,13 +36,20 @@ export const Row: FC<Props> = ({
           >
             <Edit fontSize="small" />
           </IconButton>
-          <IconButton
-            variant="ghost"
-            className="hidden h-8 w-8 p-0 lg:flex"
-            onClick={() => navigate('delete')}
-          >
-            <Delete fontSize="small" />
-          </IconButton>
+          <AlertDialogRoot>
+            <AlertDialogTrigger>
+
+              <IconButton
+                variant="ghost"
+                className="hidden h-8 w-8 p-0 lg:flex"
+              >
+                <Delete fontSize="small" />
+              </IconButton>
+            </AlertDialogTrigger>
+            <AlertDelete
+              recipe={recipe}
+            />
+          </AlertDialogRoot>
         </TD>
       )}
       {canOrder && (
