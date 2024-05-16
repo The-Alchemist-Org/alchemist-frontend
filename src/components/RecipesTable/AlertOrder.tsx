@@ -1,4 +1,4 @@
-import { postQueue } from 'api/Demo/demo';
+import { postQueue } from 'api/Queue';
 import { RecipeDTO } from 'api/Recepies';
 import {
   AlertDialogContentType, AlertDialogFooter,
