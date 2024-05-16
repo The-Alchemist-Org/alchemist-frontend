@@ -14,6 +14,7 @@ type Props = {
   filter?: {
     search?: string;
     filter?: number[];
+    uploadedBy?:number;
   };
 };
 
@@ -28,6 +29,7 @@ export const RecipesTable: FC<Props> = ({
     limit: DEFAULT_PAGE_SIZE,
     search: filter?.search,
     filter: filter?.filter,
+    uploadedBy: filter?.uploadedBy,
   });
   if (isInitialLoading) {
     return (

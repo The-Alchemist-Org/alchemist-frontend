@@ -1,9 +1,11 @@
 import { Add } from '@mui/icons-material';
 import { Button, TablePage, RecipesTable } from 'components';
+import { useAuthContext } from 'context';
 import { useNavigate } from 'react-router-dom';
 
 export const Overview = () => {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
 
   return (
     <TablePage
@@ -19,7 +21,7 @@ export const Overview = () => {
       )}
     >
       <div>
-        <RecipesTable canOrder={false} />
+        <RecipesTable canOrder={false} filter={{ uploadedBy: user?.id }} />
       </div>
     </TablePage>
   );
