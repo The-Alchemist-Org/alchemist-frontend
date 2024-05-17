@@ -20,6 +20,7 @@ export type RecipeListParams = {
   limit?: number;
   search?: string;
   filter?: number[];
+  uploadedBy?: number;
 };
 
 export type RecipeListResponse = {
@@ -27,4 +28,12 @@ export type RecipeListResponse = {
   page: number;
   pageSize: number;
   totalPages: number;
+};
+
+export type RecipeBody = {
+  name: string;
+  ingredients: {
+    id: number;
+    quantity: number;
+  }[]
 };
