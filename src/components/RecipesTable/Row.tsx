@@ -53,7 +53,7 @@ export const Row: FC<Props> = ({
         </TD>
       )}
       {canOrder && (
-        <TD className="flex flex-row gap-2">
+        <TD className="flex flex-row gap-2 justify-end">
           <AlertDialogRoot>
             <AlertDialogTrigger>
               <IconButton
