@@ -61,7 +61,13 @@ export const useRecipeUpdateForm = ({
 
   const { data: recipe, isLoading: isLoadingData } = useRecipeDetail(recipeId);
 
-  const defaultValues = useMemo(() => recipe?.data, [recipe]);
+  const defaultValues = useMemo(() => ({
+    ...recipe?.data,
+    ingredients: recipe?.data?.ingredients.map((ingredient) => ({
+      id: ingredient.ingredientId,
+      quantity: ingredient.quantity,
+    })),
+  }), [recipe]);
 
   const methods = useForm<RecipeModifierFormType>({
     resolver: zodResolver(RecipeModifierForm),
@@ -71,7 +77,7 @@ export const useRecipeUpdateForm = ({
 
   useEffect(() => {
     if (recipe?.data) {
-      methods.reset(recipe?.data);
+      methods.reset(defaultValues);
     }
   }, [recipe]);
 
