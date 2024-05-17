@@ -76,8 +76,8 @@ export const RecipesModifier:FC<Props> = ({ isEdit }) => {
                           )}
                         />
                         <FormFieldNumber
-                          label="Amount left"
-                          placeholder="Input amount left"
+                          label="Quantity"
+                          placeholder="Input quantity"
                           suffix="cl"
                           error={methods.formState.errors?.ingredients?.[index]?.quantity?.message}
                           value={field.quantity}
